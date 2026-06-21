@@ -3,7 +3,7 @@ import Link from "next/link"
 export function Header() {
     return(
         <header className="flex items-center justify-between">
-            <h1 className="font-bilderberg text-3xl">RESNOOD</h1>
+            <h1 className="text-secondary font-bilderberg text-3xl">RESNOOD</h1>
             <nav>
                 <ul className="flex gap-20 text-sm-3 font-inria-sans">
                     <Link href="/">

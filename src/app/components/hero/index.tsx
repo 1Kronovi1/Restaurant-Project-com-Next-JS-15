@@ -19,7 +19,7 @@ export function Hero() {
             </div>
             <div className='w-full lg:w-1/2 flex justify-center lg:justify-end'>
                 <Image 
-                    className='w-40 sm:w-52 lg:w-230 h-auto' 
+                    className='w-40 sm:w-52 lg:w-180 h-auto' 
                     src={foodhero} 
                     alt='Food Hero'
                     priority

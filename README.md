@@ -1,9 +1,10 @@
 # RESNOOD — Restaurant Menu
 
 A modern restaurant menu built with Next.js, TypeScript, Tailwind CSS and shadcn/ui. The project features a hero section, a dynamic food card grid, and individual pages for each dish — all with a responsive layout across mobile, tablet and desktop.
-
-<img width="1266" height="1004" alt="image1" src="https://github.com/user-attachments/assets/d2e7e3f1-2c98-4a43-a205-fa55c08cc60a" />
-<img width="1266" height="1004" alt="image2" src="https://github.com/user-attachments/assets/7043e011-5d8d-4108-b510-e71bca094c32" />
+<div style={display: flex;}>
+  <img width="1266" height="1004" alt="image1" src="https://github.com/user-attachments/assets/d2e7e3f1-2c98-4a43-a205-fa55c08cc60a" />
+  <img width="1266" height="1004" alt="image2" src="https://github.com/user-attachments/assets/7043e011-5d8d-4108-b510-e71bca094c32" />
+</div>
 
 ---
 

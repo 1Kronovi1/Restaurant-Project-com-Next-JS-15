@@ -68,7 +68,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Or / Project public deployed link: https://restaurant-project-com-next-js-15.vercel.app/
+Or Project public deployed link: https://restaurant-project-com-next-js-15.vercel.app/
 
 ---
 

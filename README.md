@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RESNOOD — Restaurant Menu
+
+A modern restaurant menu built with Next.js, TypeScript, Tailwind CSS and shadcn/ui. The project features a hero section, a dynamic food card grid, and individual pages for each dish — all with a responsive layout across mobile, tablet and desktop.
+
+---
+
+## Features
+
+- **Hero section** with call-to-action buttons
+- **Menu section** displaying food cards with image, title, description, rating and price
+- **Dynamic routes** — each dish has its own page at `/{id}` with detailed information and an order button
+- **Related items** — the dish detail page shows the other available items, excluding the current one
+- **Fully responsive** — built mobile-first with Tailwind CSS breakpoints (`sm`, `lg`)
+- **Custom design system** — tokens for primary, secondary and component background colors; custom fonts (Inria Sans, Inria Serif, Bilderberg)
+- **shadcn/ui Button** — with custom variants (`componentBackground`) and a custom size (`giant`)
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Components | shadcn/ui + Radix UI |
+| Animations | tw-animate-css |
+| Fonts | next/font (Google + local) |
+
+---
+
+## Project Structure
+
+```
+src/
+  app/
+    [id]/page.tsx          # Dynamic route — dish detail page
+    components/
+      header/              # Site header with navigation
+      hero/                # Hero section with CTA buttons
+      menu/                # Menu section wrapper
+      foodsMenu/           # Food card grid (reused on home and detail page)
+      foods/               # Food data (typed with TypeScript interface)
+      button/              # Legacy button component (kept for reference)
+    fonts/                 # Custom font definitions
+    globals.css            # CSS variables (design tokens)
+    layout.tsx             # Root layout with Header
+    page.tsx               # Home page
+  components/
+    ui/button.tsx          # shadcn/ui Button with custom variants and sizes
+  assets/                  # Food images and icons
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design Decisions
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **shadcn/ui over a closed component library** — gives full control over component code, making customization straightforward without fighting a closed API.
+- **Radix UI primitives** — accessibility (focus management, keyboard navigation, ARIA attributes) is handled at the primitive level, not retrofitted manually.
+- **CSS variable tokens** (`--primary`, `--secondary`, `--components-background`) — changing the brand color in one place updates every component that references that token.
+- **`FoodsMenu` component reuse** — the same grid component renders on the home page (all items) and on the detail page (all items except the current one), controlled via an optional `currentId` prop.
